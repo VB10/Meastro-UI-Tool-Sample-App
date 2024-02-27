@@ -1,0 +1,21 @@
+# flow.yaml
+
+appId: com.example.meastroSample
+env:
+    USER_EMAIL: "veli@test.com"
+    USER_PASSWORD: "12345678"
+---
+- launchApp
+- assertVisible: "vb10 login"
+- tapOn: "Login"
+- assertVisible: "Please enter some text"
+- tapOn: "Email"
+- inputText: ${USER_EMAIL}
+- tapOn: "Password"
+- inputText: "12345"
+- assertVisible: ".*least 8 characters long.*"
+- hideKeyboard
+- tapOn: "Password"
+- inputText: ${USER_PASSWORD}
+- tapOn: "Login"
+- runFlow: home_flow.yaml

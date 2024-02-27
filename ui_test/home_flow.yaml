@@ -1,0 +1,12 @@
+# flow.yaml
+
+appId: com.example.meastroSample
+
+---
+- extendedWaitUntil: 
+    visible: ".*home*."
+    timeout: 10000
+- scroll
+- assertVisible: "Item 15"
+- openLink: https://maestro.mobile.dev/api-reference/commands/openlink
+- stopApp
